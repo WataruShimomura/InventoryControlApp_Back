@@ -33,6 +33,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 		    @SuppressWarnings("deprecation")
 			private ApiInfo apiInfo() {
-		        return new ApiInfo("Sample API", "V1", null, null, null, null, null);
+		        return new ApiInfo("Inventory API", "V1", null, null, null, null, null);
 		    }
 		}
