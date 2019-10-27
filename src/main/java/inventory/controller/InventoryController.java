@@ -64,10 +64,8 @@ public class InventoryController {
 	}
 
 	@ApiOperation(
-		    value = "品物の情報を取得",
+		    value = "品目情報更新",
 		    notes = "指定した在庫名の品物の情報を更新します。"
-		    		+ "・在庫名"
-		    		+ "・在庫数"
 		)
 	@GetMapping("/update")
 	public List<UpDateRes> getUpDateResList() {
@@ -75,7 +73,7 @@ public class InventoryController {
 	}
 
 	@ApiOperation(
-		    value = "品物の在庫数を増減させる",
+		    value = "在庫増減",
 		    notes = "指定した在庫名の品物の在庫数を増減させます。負の数の場合に、減少させます。"
 		)
 	@PostMapping("/change")
