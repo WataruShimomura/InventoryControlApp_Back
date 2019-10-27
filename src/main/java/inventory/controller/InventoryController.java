@@ -7,13 +7,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import inventory.data.DeleteReq;
 import inventory.data.EntryReq;
 import inventory.data.GootsParamRes;
 import inventory.data.StockChangeReq;
-import inventory.data.StockChangeRes;
 import inventory.data.StockRes;
-import inventory.data.UpDateRes;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
@@ -31,32 +28,24 @@ public class InventoryController {
 	}
 
 	@ApiOperation(
-		    value = "在庫の登録",
-		    notes = "以下情報を入力し在庫の登録を行います。"
-		    		+ "・在庫名"
-		    		+ "・在庫数"
-		    		+ "※IDは自動採番"
-		    		+ "※同名の在庫名は情報を更新"
+		    value = "在庫の登録情報",
+		    notes = "新規在庫の情報を入力し、登録します。*IDは自動採番"
 		)
 	@GetMapping("/entry")
-	public List<EntryReq> getEntryList() {
-		return null;
+	public void entry(@RequestBody EntryReq req) {
 	}
 
 	@ApiOperation(
-		    value = "在庫の登録情報を消去",
+		    value = "在庫の登録情報",
 		    notes = "指定した在庫名の登録情報を消去します。"
 		)
 	@GetMapping("/delete")
-	public List<DeleteReq> getDeleteReqList() {
-		return null;
+	public void DeleteReq() {
 	}
 
 	@ApiOperation(
-		    value = "品物の情報を取得",
+		    value = "品物情報",
 		    notes = "指定した在庫名の品物の情報を取得します。"
-		    		+ "・在庫名"
-		    		+ "・在庫数"
 		)
 	@GetMapping("/gootsparam")
 	public List<GootsParamRes> getGootsParamList() {
@@ -68,8 +57,7 @@ public class InventoryController {
 		    notes = "指定した在庫名の品物の情報を更新します。"
 		)
 	@GetMapping("/update")
-	public List<UpDateRes> getUpDateResList() {
-		return null;
+	public void getUpDateResList() {
 	}
 
 	@ApiOperation(
@@ -77,7 +65,6 @@ public class InventoryController {
 		    notes = "指定した在庫名の品物の在庫数を増減させます。負の数の場合に、減少させます。"
 		)
 	@PostMapping("/change")
-	public List<StockChangeRes> changeStock(@RequestBody StockChangeReq req) {
-		return null;
+	public void changeStock(@RequestBody StockChangeReq req) {
 	}
 }
