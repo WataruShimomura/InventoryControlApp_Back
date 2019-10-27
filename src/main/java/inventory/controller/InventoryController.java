@@ -13,6 +13,7 @@ import inventory.data.GootsParamReq;
 import inventory.data.GootsParamRes;
 import inventory.data.StockChangeReq;
 import inventory.data.StockRes;
+import inventory.data.UpdateReq;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
@@ -46,11 +47,11 @@ public class InventoryController {
 	}
 
 	@ApiOperation(
-		    value = "品物詳細",
+		    value = "品物詳細取得",
 		    notes = "指定したＩＤの品物の情報を取得します。"
 		)
 	@GetMapping("/gootsparam")
-	public List<GootsParamRes> getGootsParam(@RequestBody GootsParamReq req) {
+	public GootsParamRes getGootsParam(@RequestBody GootsParamReq req) {
 		return null;
 	}
 
@@ -59,7 +60,7 @@ public class InventoryController {
 		    notes = "指定した在庫名の品物の情報を更新します。"
 		)
 	@PostMapping("/update")
-	public void getUpDateResList() {
+	public void upDate(@RequestBody UpdateReq req) {
 	}
 
 	@ApiOperation(

@@ -6,8 +6,10 @@ import lombok.Data;
 
 @ApiModel(description = "情報更新")
 @Data
-public class UpDateRes {
+public class UpdateReq {
 
+	@ApiModelProperty(value = "id", example = "1")
+	private String id;
 	@ApiModelProperty(value = "名前", example = "リンゴ")
 	private String name;
 	@ApiModelProperty(value = "在庫数", example = "10")
