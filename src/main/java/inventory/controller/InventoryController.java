@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import inventory.data.DeleteReq;
 import inventory.data.EntryReq;
+import inventory.data.GootsParamReq;
 import inventory.data.GootsParamRes;
 import inventory.data.StockChangeReq;
 import inventory.data.StockRes;
@@ -45,11 +46,11 @@ public class InventoryController {
 	}
 
 	@ApiOperation(
-		    value = "品物情報",
-		    notes = "指定した在庫名の品物の情報を取得します。"
+		    value = "品物詳細",
+		    notes = "指定したＩＤの品物の情報を取得します。"
 		)
-	@PostMapping("/gootsparam")
-	public List<GootsParamRes> getGootsParamList() {
+	@GetMapping("/gootsparam")
+	public List<GootsParamRes> getGootsParam(@RequestBody GootsParamReq req) {
 		return null;
 	}
 
