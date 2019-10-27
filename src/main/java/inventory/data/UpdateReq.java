@@ -12,7 +12,5 @@ public class UpdateReq {
 	private String id;
 	@ApiModelProperty(value = "名前", example = "リンゴ")
 	private String name;
-	@ApiModelProperty(value = "在庫数", example = "10")
-	private Integer stockNum;
 
 }

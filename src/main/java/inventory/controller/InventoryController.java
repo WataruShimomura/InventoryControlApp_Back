@@ -57,7 +57,7 @@ public class InventoryController {
 
 	@ApiOperation(
 		    value = "品目情報更新",
-		    notes = "指定した在庫名の品物の情報を更新します。"
+		    notes = "指定したＩＤの品物の情報を更新します。"
 		)
 	@PostMapping("/update")
 	public void upDate(@RequestBody UpdateReq req) {
