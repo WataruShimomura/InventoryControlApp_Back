@@ -3,12 +3,15 @@ package inventory.controller;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import inventory.data.ChangeReq;
 import inventory.data.DeleteReq;
 import inventory.data.EntryReq;
 import inventory.data.GootsParamRes;
+import inventory.data.StockChangeReq;
+import inventory.data.StockChangeRes;
 import inventory.data.StockRes;
 import inventory.data.UpDateRes;
 import io.swagger.annotations.Api;
@@ -73,12 +76,10 @@ public class InventoryController {
 
 	@ApiOperation(
 		    value = "品物の在庫数を増減させる",
-		    notes = "指定した在庫名の品物の在庫数を増減させます。"
-		    		+ "・在庫名"
-		    		+ "・在庫数"
+		    notes = "指定した在庫名の品物の在庫数を増減させます。負の数の場合に、減少させます。"
 		)
-	@GetMapping("/change")
-	public List<ChangeReq> getChangeReqList() {
+	@PostMapping("/change")
+	public List<StockChangeRes> changeStock(@RequestBody StockChangeReq req) {
 		return null;
 	}
 }
