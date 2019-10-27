@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import inventory.data.DeleteReq;
 import inventory.data.EntryReq;
 import inventory.data.GootsParamRes;
 import inventory.data.StockChangeReq;
@@ -28,26 +29,26 @@ public class InventoryController {
 	}
 
 	@ApiOperation(
-		    value = "在庫の登録情報",
+		    value = "在庫登録情報",
 		    notes = "新規在庫の情報を入力し、登録します。*IDは自動採番"
 		)
-	@GetMapping("/entry")
+	@PostMapping("/entry")
 	public void entry(@RequestBody EntryReq req) {
 	}
 
 	@ApiOperation(
-		    value = "在庫の登録情報",
+		    value = "在庫登録情報消去",
 		    notes = "指定した在庫名の登録情報を消去します。"
 		)
-	@GetMapping("/delete")
-	public void DeleteReq() {
+	@PostMapping("/delete")
+	public void delete(@RequestBody DeleteReq req) {
 	}
 
 	@ApiOperation(
 		    value = "品物情報",
 		    notes = "指定した在庫名の品物の情報を取得します。"
 		)
-	@GetMapping("/gootsparam")
+	@PostMapping("/gootsparam")
 	public List<GootsParamRes> getGootsParamList() {
 		return null;
 	}
@@ -56,7 +57,7 @@ public class InventoryController {
 		    value = "品目情報更新",
 		    notes = "指定した在庫名の品物の情報を更新します。"
 		)
-	@GetMapping("/update")
+	@PostMapping("/update")
 	public void getUpDateResList() {
 	}
 

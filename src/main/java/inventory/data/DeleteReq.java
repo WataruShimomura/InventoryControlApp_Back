@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 public class DeleteReq {
 
-	@ApiModelProperty(value = "名前", example = "リンゴ")
-	private String name;
+	@ApiModelProperty(value = "id", example = "1")
+	private String id;
 
 }
