@@ -9,7 +9,7 @@ import lombok.Data;
 public class StockRes {
 
 	@ApiModelProperty(value = "id", example = "1")
-	private String id;
+	private Integer id;
 	@ApiModelProperty(value = "名前", example = "リンゴ")
 	private String name;
 	@ApiModelProperty(value = "在庫数", example = "10")
