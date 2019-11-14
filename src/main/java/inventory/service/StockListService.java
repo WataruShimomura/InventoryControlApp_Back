@@ -8,17 +8,17 @@ import org.springframework.stereotype.Service;
 
 import inventory.data.StockRes;
 import inventory.data.entity.Stock;
-import inventory.mapper.testMapper;
+import inventory.mapper.StockMapper;
 
 @Service
-public class StockService {
+public class StockListService {
 
 	@Autowired
-	private testMapper testMapper;
+	private StockMapper StockMapper;
 
 
 	public List<StockRes> getStockList() {
-		List<Stock> result = testMapper.stocklist();
+		List<Stock> result = StockMapper.stocklist();
 		List<StockRes> response = result.stream().map(t -> {
 			StockRes res = new StockRes();
 			res.setId(t.getId());

@@ -16,7 +16,8 @@ import inventory.data.GootsParamRes;
 import inventory.data.StockChangeReq;
 import inventory.data.StockRes;
 import inventory.data.UpdateReq;
-import inventory.service.StockService;
+import inventory.service.EntryReqService;
+import inventory.service.StockListService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
@@ -26,7 +27,9 @@ import io.swagger.annotations.ApiOperation;
 public class InventoryController {
 
 	@Autowired
-	private StockService stockService;
+	private StockListService stockService;
+	@Autowired
+	private EntryReqService entryReqService;
 
 	@ApiOperation(value = "在庫一覧取得", notes = "在庫の一覧を取得します。")
 	@GetMapping("/stock")
@@ -37,6 +40,9 @@ public class InventoryController {
 	@ApiOperation(value = "在庫登録情報", notes = "新規在庫の情報を入力し、登録します。*IDは自動採番")
 	@PostMapping("/entry")
 	public void entry(@RequestBody EntryReq req) {
+		String name = req.getName();
+		int stockNum = req.getStockNum();
+		this.entryReqService.entryReq(name,stockNum);
 	}
 
 	@ApiOperation(value = "在庫登録情報消去", notes = "指定した在庫名の登録情報を消去します。")
