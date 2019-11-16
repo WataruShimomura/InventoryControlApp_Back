@@ -8,8 +8,8 @@ import lombok.Data;
 @Data
 public class GootsParamRes {
 
-	@ApiModelProperty(value = "id", example = "1")
-	private String id;
+	@ApiModelProperty(value = "id", example = "2")
+	private int id;
 	@ApiModelProperty(value = "名前", example = "リンゴ")
 	private String name;
 	@ApiModelProperty(value = "在庫数", example = "10")

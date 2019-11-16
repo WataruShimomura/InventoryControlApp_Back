@@ -6,13 +6,13 @@ import org.springframework.stereotype.Service;
 import inventory.mapper.StockMapper;
 
 @Service
-public class EntryReqService {
+public class UpDateService {
 
 	@Autowired
 	private StockMapper StockMapper;
 
-	public void entryReq(String name,int stockNum) {
-		StockMapper.entryReqMapper(name,stockNum);
+	public void upDateService(int id,String name) {
+		StockMapper.updateReqMapper(id,name);
 	}
 
 }

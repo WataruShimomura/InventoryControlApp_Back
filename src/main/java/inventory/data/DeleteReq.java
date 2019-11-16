@@ -9,6 +9,6 @@ import lombok.Data;
 public class DeleteReq {
 
 	@ApiModelProperty(value = "id", example = "1")
-	private String id;
+	private int id;
 
 }

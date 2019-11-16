@@ -8,8 +8,8 @@ import lombok.Data;
 @Data
 public class StockChangeReq {
 
-	@ApiModelProperty(value = "id", example = "1")
-	private String id;
+	@ApiModelProperty(value = "id", example = "2")
+	private int id;
 
 	@ApiModelProperty(value = "加算数量", example = "1")
 	private int sumValue;

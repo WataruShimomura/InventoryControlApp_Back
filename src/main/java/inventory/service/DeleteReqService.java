@@ -6,13 +6,12 @@ import org.springframework.stereotype.Service;
 import inventory.mapper.StockMapper;
 
 @Service
-public class EntryReqService {
+public class DeleteReqService {
 
 	@Autowired
 	private StockMapper StockMapper;
 
-	public void entryReq(String name,int stockNum) {
-		StockMapper.entryReqMapper(name,stockNum);
+	public void deleteReq(int id) {
+		StockMapper.deleteReqMapper(id);
 	}
-
 }
