@@ -1,5 +1,6 @@
 package inventory.mapper;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;
@@ -17,8 +18,8 @@ public interface StockMapper {
 	@Select("SELECT id, name,stockNum FROM Stock")
 	public List<Stock> stocklist();
 
-	@Insert("insert into Stock (name, stockNum) values (#{name}, #{stockNum})")
-	public void entryReqMapper(@Param("name") String name,@Param("stockNum")int stockNum);
+	@Insert("insert into Stock (name, stockNum, upDateTime) values (#{name}, #{stockNum}, #{upDateTime})")
+	public void entryReqMapper(@Param("name") String name,@Param("stockNum")int stockNum,@Param("upDateTime")LocalDateTime upDateTime);
 
 	@Delete("delete from Stock where id = #{id}")
 	public void deleteReqMapper(@Param("id")int id);

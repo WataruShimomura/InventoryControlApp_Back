@@ -32,10 +32,15 @@ public class InventoryController {
 
 	@Autowired
 	private StockListService stockService;
+	@Autowired
 	private EntryReqService entryReqService;
+	@Autowired
 	private DeleteReqService deleteReqService;
+	@Autowired
 	private GootsParamService gootsParamService;
+	@Autowired
 	private UpDateService upDateService;
+	@Autowired
 	private StockChangeService stockChangeService;
 
 	@ApiOperation(value = "在庫一覧取得", notes = "在庫の一覧を取得します。")

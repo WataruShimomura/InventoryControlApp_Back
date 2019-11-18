@@ -1,5 +1,7 @@
 package inventory.service;
 
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +14,8 @@ public class EntryReqService {
 	private StockMapper StockMapper;
 
 	public void entryReq(String name,int stockNum) {
-		StockMapper.entryReqMapper(name,stockNum);
+		LocalDateTime date = LocalDateTime.now();
+		StockMapper.entryReqMapper(name,stockNum,date);
 	}
 
 }

@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 public class GootsParamReq {
 
-	@ApiModelProperty(value = "id", example = "2")
+	@ApiModelProperty(value = "id", example = "3")
 	private int id;
 
 }

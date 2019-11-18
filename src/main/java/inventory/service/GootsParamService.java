@@ -1,10 +1,12 @@
 package inventory.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import inventory.data.GootsParamRes;
 import inventory.mapper.StockMapper;
 
+@Service
 public class GootsParamService {
 
 	@Autowired

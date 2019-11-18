@@ -1,5 +1,7 @@
 package inventory.data;
 
+import java.util.Date;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -14,5 +16,7 @@ public class GootsParamRes {
 	private String name;
 	@ApiModelProperty(value = "在庫数", example = "10")
 	private Integer stockNum;
+	@ApiModelProperty(value = "更新時間", example = "2019-11-17 18:58:58")
+	private Date upDateTime;
 
 }

@@ -9,10 +9,13 @@ import inventory.mapper.StockMapper;
 public class UpDateService {
 
 	@Autowired
-	private StockMapper StockMapper;
+	private StockMapper stockMapper;
 
 	public void upDateService(int id,String name) {
-		StockMapper.updateReqMapper(id,name);
+
+		stockMapper.updateReqMapper(id,name);
+
+//		stockMapper.
 	}
 
 }
