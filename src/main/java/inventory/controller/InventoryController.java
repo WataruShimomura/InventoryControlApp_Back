@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import inventory.data.DeleteReq;
 import inventory.data.EntryReq;
-import inventory.data.GootsParamReq;
 import inventory.data.GootsParamRes;
 import inventory.data.StockChangeReq;
 import inventory.data.StockRes;
@@ -22,6 +21,7 @@ import inventory.service.GootsParamService;
 import inventory.service.StockChangeService;
 import inventory.service.StockListService;
 import inventory.service.UpDateService;
+import inventory.service.UpdateStockService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
@@ -42,6 +42,8 @@ public class InventoryController {
 	private UpDateService upDateService;
 	@Autowired
 	private StockChangeService stockChangeService;
+	@Autowired
+	private  UpdateStockService updateStockService;
 
 	@ApiOperation(value = "在庫一覧取得", notes = "在庫の一覧を取得します。")
 	@GetMapping("/stock")
@@ -51,6 +53,8 @@ public class InventoryController {
 
 	@ApiOperation(value = "在庫登録情報", notes = "新規在庫の情報を入力し、登録します。*IDは自動採番")
 	@PostMapping("/entry")
+	//引数の@RequestBodyを除去、コンテンツタイプがapplication / x-www-form-urlencodedであるため
+	//Testの際はまたつける
 	public void entry(@RequestBody EntryReq req) {
 		String name = req.getName();
 		int stockNum = req.getStockNum();
@@ -65,8 +69,8 @@ public class InventoryController {
 
 	@ApiOperation(value = "品物詳細取得", notes = "指定したＩＤの品物の情報を取得します。")
 	@GetMapping("/gootsparam")
-	public GootsParamRes getGootsParam(@RequestBody GootsParamReq req) {
-		return this.gootsParamService.gootsParamReq(req.getId());
+	public GootsParamRes getGootsParam(@RequestBody Integer id) {
+		return this.gootsParamService.gootsParamReq(id);
 	}
 
 	@ApiOperation(value = "品目情報更新", notes = "指定したＩＤの品物の情報を更新します。")
@@ -75,9 +79,16 @@ public class InventoryController {
 		this.upDateService.upDateService(req.getId(),req.getName());
 	}
 
-	@ApiOperation(value = "在庫増減", notes = "指定した在庫名の品物の在庫数を増減させます。負の数の場合に、減少させます。")
+	@ApiOperation(value = "在庫増減", notes = "指定した在庫idの品物の在庫数を増減させます。負の数の場合は減少させます。")
 	@PostMapping("/change")
 	public void changeStock(@RequestBody StockChangeReq req) {
 		this.stockChangeService.stockChange(req.getId(),req.getSumValue());
 	}
+
+	@ApiOperation(value = "在庫数更新", notes = "指定した在庫idの品物の在庫数を更新します。")
+	@PostMapping("/updatestock")
+	public void updateStock(@RequestBody StockChangeReq req) {
+		this.updateStockService.updateStock(req.getId(),req.getSumValue());
+	}
+
 }

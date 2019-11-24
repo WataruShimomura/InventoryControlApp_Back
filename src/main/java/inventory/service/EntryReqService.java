@@ -1,7 +1,5 @@
 package inventory.service;
 
-import java.time.LocalDateTime;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +12,9 @@ public class EntryReqService {
 	private StockMapper StockMapper;
 
 	public void entryReq(String name,int stockNum) {
-		LocalDateTime date = LocalDateTime.now();
-		StockMapper.entryReqMapper(name,stockNum,date);
+		//ログイン機能実装時に更新時間を追加
+//		LocalDateTime date = LocalDateTime.now();
+		StockMapper.entryReqMapper(name,stockNum);
 	}
 
 }

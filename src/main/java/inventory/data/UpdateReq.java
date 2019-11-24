@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 public class UpdateReq {
 
-	@ApiModelProperty(value = "id", example = "2")
+	@ApiModelProperty(value = "id", example = "3")
 	private int id;
 	@ApiModelProperty(value = "名前", example = "なめろう")
 	private String name;

@@ -12,10 +12,7 @@ public class UpDateService {
 	private StockMapper stockMapper;
 
 	public void upDateService(int id,String name) {
-
 		stockMapper.updateReqMapper(id,name);
-
-//		stockMapper.
 	}
 
 }
